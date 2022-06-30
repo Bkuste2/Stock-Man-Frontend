@@ -1,0 +1,20 @@
+{
+	"react-component": {
+		"scope": "javascript,javascriptreact",
+		"prefix": "reactcomp",
+		"body": [
+			"import React from 'react'",
+			"import { useState } from 'react-native'",
+			"import styles from './styles'",
+			"",
+			"function App$1(){",
+			"",
+			"    return(",
+			"        <Text>$3</Text>",
+			"    )",
+			"}",
+			
+			"export default App$2;"
+		]
+	}
+}
