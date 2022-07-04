@@ -1,15 +1,14 @@
-import React from 'react'
-import { Text, useState, View, Image } from 'react-native'
+import React, { Children } from 'react'
+import { Text } from 'react-native'
 import styles from './styles'
 
-import LogoComEscrita from '../../img/LogoComEscrita.png'
 
-function BoasVindas(){
+function BoasVindas(props){
 
     return(
-    <View style={styles.container}>
-        <Image source={LogoComEscrita} />
-    </View>
+        <View style={styles.container}>
+            {props.children}
+        </View>
     )
 }
 export default BoasVindas;
