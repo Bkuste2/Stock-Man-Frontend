@@ -1,13 +1,16 @@
-import React, { Children } from 'react'
-import { Text } from 'react-native'
-import styles from './styles'
+import React from 'react'
+import { View } from 'react-native'
+import { container } from './styles'
 
+import LogoBoasVindas from '../../img/LogoBoasVindas'
+import Button from '../../components/Button'
 
-function BoasVindas(props){
+function BoasVindas(){
 
     return(
-        <View style={styles.container}>
-            {props.children}
+        <View style={ container }>
+            <LogoBoasVindas/>
+            <Button text={"Entrar"}/>
         </View>
     )
 }

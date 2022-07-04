@@ -1,16 +1,15 @@
 import React from 'react'
-import { SafeAreaView } from 'react-native'
-import globalStyles from './src/globalStyles';
+import { View, SafeAreaView } from 'react-native'
+import { AndroidSafeArea } from './src/globalStyles';
 import IndexPage from './src/screens/Index'
-import BoasVindas from './src/screens/BoasVindas';
+import Layout from './src/screens/Layout'
 
 function App(){
 
     return(
-        <SafeAreaView style={globalStyles.AndroidSafeArea}>
-            <IndexPage />
-            <BoasVindas children={"OI"}/>
-        </SafeAreaView>
+        <View style={{flex:1, backgroundColor:"#000",}}>
+            <Layout />
+        </View>
     )
 }
 
