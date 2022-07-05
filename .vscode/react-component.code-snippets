@@ -4,7 +4,7 @@
 		"prefix": "reactcomp",
 		"body": [
 			"import React from 'react'",
-			"import { useState } from 'react-native'",
+			"import { Text, useState } from 'react-native'",
 			"import styles from './styles'",
 			"",
 			"function App$1(){",

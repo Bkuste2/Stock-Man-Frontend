@@ -9,3 +9,9 @@ export const container = StyleSheet.create({
     flex:1,
     backgroundColor:"#000",
 })
+
+export default StyleSheet.create({
+    "::root": {
+        "--color-primary": "#00FFFC",
+    }
+})

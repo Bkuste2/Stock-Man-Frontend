@@ -3,7 +3,7 @@ import { View } from 'react-native'
 import { container } from './styles'
 
 
-import LogoComEscrita from '../../img/LogoBoasVindas.jsx'
+import LogoComEscrita from '../../assets/img/LogoBoasVindas.jsx'
 
 function Index(){
     return(
