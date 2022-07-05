@@ -1,14 +1,16 @@
 import React from 'react'
-import { View, TextInput, Text } from 'react-native'
-import { text, container } from './styles'
+import { TextInput } from 'react-native'
+import { input } from './styles'
 
 
-const InputField = ({placeholder}) => {
+const InputField = ({value, textInputFunction}) => {
     return (
-        // <TextInput
-        //     placeholder={placeholder} placeholderTextColor={{color:'#fff'}}
-        // />
-        <Text style={{color:'#fff'}}>{placeholder}</Text>
+        <TextInput 
+            style={input}
+            placeholder={value}
+            placeholderTextColor="#00FFFC"
+            onChangeText={textInputFunction}
+        />
     )
 }
 

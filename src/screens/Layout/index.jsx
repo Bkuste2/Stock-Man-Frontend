@@ -1,18 +1,22 @@
 import React from 'react'
-import { SafeAreaView } from 'react-native'
-import { AndroidSafeArea } from '../../globalStyles'
+import { View, SafeAreaView } from 'react-native'
+import { AndroidSafeArea, container } from './styles'
 import BoasVindas from '../BoasVindas'
 import IndexPage from '../Index'
 import Cadastro from '../Cadastro'
+import Login from '../Login'
 
 
 function Layout(){
     return(
-        <SafeAreaView style={AndroidSafeArea}>
-            {/* <IndexPage /> */}
-            {/* <BoasVindas /> */}
-            <Cadastro />
-        </SafeAreaView>
+        <View style={container}>
+            <SafeAreaView style={AndroidSafeArea}>
+                {/* <IndexPage /> */}
+                {/* <BoasVindas /> */}
+                <Cadastro />
+                {/* <Login /> */}
+            </SafeAreaView>
+        </View>
     )
 }
 
