@@ -7,4 +7,5 @@ export const container = StyleSheet.create({
     width:"100%",
     height:"100%",
     paddingHorizontal:23,
+    backgroundColor:"#000",
 })

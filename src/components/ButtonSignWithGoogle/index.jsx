@@ -4,10 +4,10 @@ import { button, container, txtButton } from './styles'
 import IconGoogle from '../../assets/img/IconGoogle'
 
 
-const Button =  ({ text, buttonFunction }) => {
+const Button =  ({ text, onPressButton }) => {
     return (
         <View>
-            <TouchableOpacity style={ button } onPress={buttonFunction}>
+            <TouchableOpacity style={ button } onPress={onPressButton}>
                 <IconGoogle />
                 <Text style={txtButton}>
                     {text}
