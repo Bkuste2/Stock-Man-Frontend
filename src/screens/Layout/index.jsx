@@ -5,7 +5,7 @@ import IndexPage from '../Index'
 import BoasVindas from '../BoasVindas'
 import Cadastro from '../Cadastro'
 import Login from '../Login'
-import Estoques from '../Estoques'
+import ListaUsuarios from '../ListaUsuarios'
 
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
@@ -40,7 +40,7 @@ function Layout(){
                         />
                     </Stack.Navigator>
                 </NavigationContainer> */}
-             <Estoques /> 
+             <ListaUsuarios /> 
             </SafeAreaView>
         </View>
     )
