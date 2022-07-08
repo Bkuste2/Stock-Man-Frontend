@@ -5,6 +5,7 @@ import IndexPage from '../Index'
 import BoasVindas from '../BoasVindas'
 import Cadastro from '../Cadastro'
 import Login from '../Login'
+import Estoques from '../Estoques'
 
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
@@ -15,7 +16,7 @@ function Layout(){
     return(
         <View style={container}>
             <SafeAreaView style={AndroidSafeArea}>
-                <NavigationContainer>
+                {/* <NavigationContainer>
                     <Stack.Navigator>
                         <Stack.Screen 
                             name="IndexPage" 
@@ -38,7 +39,8 @@ function Layout(){
                             options={{headerShown: false, drawerItemStyle: { display: "none" }}}
                         />
                     </Stack.Navigator>
-                </NavigationContainer>
+                </NavigationContainer> */}
+             <Estoques /> 
             </SafeAreaView>
         </View>
     )
