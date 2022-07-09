@@ -22,6 +22,7 @@ const ListElement = ({isUser, productName, quantity, price, username, email}) =>
             <TouchableOpacity style={container}>
                 <IconMenuEstoques />
                 <View style={{marginLeft:15,}}>
+                    <Text style={textFormat}>{id}</Text>
                     <Text style={textFormat}>{productName}</Text>
                     <Text style={textFormat}>{quantity}</Text>
                     <Text style={textFormat}>{price}</Text>

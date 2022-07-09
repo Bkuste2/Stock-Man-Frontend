@@ -5,12 +5,12 @@ import { container } from './styles';
 
 import { api } from '../../api';
 
-const ListaProdutos = () => {
+const ListaUsuarios = () => {
 
     const [apiData, setApiData] = useState({})
     useEffect(() => {
         const getApi = async () => {
-            const response = await api.get('/product')
+            const response = await api.get('/user')
             setApiData(response.data.data)
         }
         getApi()   
@@ -20,9 +20,9 @@ const ListaProdutos = () => {
         return (
             <ListElement
                 id={user.id}
-                name={user.name} 
-                quantity={user.units}
-                price={user.price}
+                username={user.username}
+                email={user.email}
+                isUser
             />
         )
     }
@@ -39,4 +39,4 @@ const ListaProdutos = () => {
     )
 } 
 
-export default ListaProdutos;
+export default ListaUsuarios;
