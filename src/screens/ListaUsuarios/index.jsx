@@ -3,29 +3,25 @@ import { FlatList, View } from 'react-native'
 import ListElement from '../../components/ListElement';
 import { container } from './styles';
 
-import { api } from '../../api';
+import { api } from './api';
 
-const ListaProdutos = () => {
+const ListaUsuarios = () => {
 
     const [apiData, setApiData] = useState({})
-    useEffect(() => {
-        const getApi = async () => {
-            const response = await api.get('/product')
-            setApiData(response.data.data)
-        }
-        getApi()   
-    }, [])
-
-    const renderItem = ({ item: user }) => {
+    
+    const getUserName = ({ListaUsuarios: user}) =>{
         return (
-            <ListElement
-                id={user.id}
-                name={user.name} 
-                quantity={user.units}
-                price={user.price}
-            />
+            <ListElement username={user.username} email={user.email} isUser />
         )
     }
+    
+    useEffect(()=> { 
+        const getApi = async () => {
+            const response = await api.get('/user')
+            setApiData(response.data.data)
+        }
+        getApi()
+    }, [])
     
     
     return (
@@ -33,10 +29,10 @@ const ListaProdutos = () => {
             <FlatList 
                 data={apiData} 
                 keyExtractor={apiData.id}
-                renderItem={renderItem}
+                renderItem={getUserName}
             />  
         </View>
     )
 } 
 
-export default ListaProdutos;
+export default Item;

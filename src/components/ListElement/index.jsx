@@ -21,7 +21,11 @@ const ListElement = ({isUser, productName, description, quantity, price, usernam
         return (
             <TouchableOpacity style={container}>
                 <IconMenuEstoques />
+<<<<<<< HEAD
                 <View style={{marginLeft:15, flexDirection:"row"}}>
+=======
+                <View style={{marginLeft:15,}}>
+>>>>>>> parent of 153f32c (Add product table)
                     <Text style={textFormat}>{productName}</Text>
                     {/* <Text style={textFormat}>{description}</Text> */}
                     <Text style={textFormat}>{quantity}</Text>
