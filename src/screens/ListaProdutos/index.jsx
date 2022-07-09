@@ -5,29 +5,32 @@ import { container } from './styles';
 
 import { api } from '../../api';
 
-const ListaUsuarios = () => {
+const ListaProdutos = () => {
 
     const [apiData, setApiData] = useState({})
     useEffect(() => {
         const getApi = async () => {
-            const response = await api.get('/user')
+            const response = await api.get('/product')
             setApiData(response.data.data)
-        }
-        getApi()   
+        } 
+        getApi()    
     }, [])
 
-    const renderItem = ({ item: user }) => {
+    const renderItem = ({ item: product }) => {
         return (
-            <ListElement
-                id={user.id}
-                username={user.username}
-                email={user.email}
-                isUser
-            />
+            <View style={container}>
+                <ListElement
+                    id={product.id}
+                    productName={product.name}
+                    quantity={product.quantity}
+                    price={product.price}
+                    description={product.description}
+                />
+            </View>
         )
     }
     
-    
+     
     return (
         <View style={container}>
             <FlatList 
@@ -39,4 +42,4 @@ const ListaUsuarios = () => {
     )
 } 
 
-export default ListaUsuarios;
+export default ListaProdutos;

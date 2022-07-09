@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { FlatList, Text, View } from 'react-native'
+import { FlatList, View } from 'react-native'
 import ListElement from '../../components/ListElement';
 import { container } from './styles';
 
