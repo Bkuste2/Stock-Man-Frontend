@@ -5,7 +5,7 @@ import IndexPage from '../Index'
 import BoasVindas from '../BoasVindas'
 import Cadastro from '../Cadastro'
 import Login from '../Login'
-import ListUsuarios from '../ListaUsuarios'
+import ListaUsuarios from '../ListaUsuarios'
 import ListaProdutos from '../ListaProdutos'
 
 import { NavigationContainer } from '@react-navigation/native'

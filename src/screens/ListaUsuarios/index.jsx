@@ -3,13 +3,13 @@ import { FlatList, View } from 'react-native'
 import ListElement from '../../components/ListElement';
 import { container } from './styles';
 
-import { api } from './api';
+import { api } from '../api';
 
 const ListaUsuarios = () => {
 
     const [apiData, setApiData] = useState({})
     
-    const getUserName = ({ListaUsuarios: user}) =>{
+    const getUsers = ({item: user}) =>{
         return (
             <ListElement username={user.username} email={user.email} isUser />
         )
@@ -29,10 +29,10 @@ const ListaUsuarios = () => {
             <FlatList 
                 data={apiData} 
                 keyExtractor={apiData.id}
-                renderItem={getUserName}
+                renderItem={getUsers}
             />  
         </View>
     )
 } 
 
-export default Item;
+export default ListaUsuarios;

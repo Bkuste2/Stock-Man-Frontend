@@ -3,7 +3,7 @@ import { FlatList, Text, View } from 'react-native'
 import ListElement from '../../components/ListElement';
 import { container } from './styles';
 
-import { api } from '../../api';
+import { api } from '../api';
 
 const ListaProdutos = () => {
 
@@ -14,7 +14,7 @@ const ListaProdutos = () => {
             setApiData(response.data.data)
         } 
         getApi()    
-    }, [])
+    }, []) 
 
     const renderItem = ({ item: product }) => {
         return (
