@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { FlatList, View } from 'react-native'
-import ListElement from '../../components/ListElement';
 import { container } from './styles';
+import { FlatList, View } from 'react-native'
+import Header from '../../components/Header';
+import ListElement from '../../components/ListElement';
 
-import { api } from '../api';
+
+import { api } from '../../assets/api';
 
 const ListaUsuarios = () => {
 
@@ -25,13 +27,16 @@ const ListaUsuarios = () => {
     
     
     return (
-        <View style={container}>
-            <FlatList 
-                data={apiData} 
-                keyExtractor={apiData.id}
-                renderItem={getUsers}
-            />  
-        </View>
+        <>
+            <Header />
+            <View style={container}>
+                <FlatList 
+                    data={apiData} 
+                    keyExtractor={apiData.id}
+                    renderItem={getUsers}
+                />  
+            </View>
+        </>
     )
 } 
 
