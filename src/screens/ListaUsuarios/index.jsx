@@ -35,11 +35,7 @@ const ListaUsuarios = () => {
 
     
 
-    const deleteUser = async (id) => {
-        fetch(`${API_URL}/user/delete/${id}`, {
-            method:"delete"
-        })
-    }
+
 
 
     // const renderUsers = () => {

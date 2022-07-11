@@ -9,6 +9,7 @@ import ListaUsuarios from '../ListaUsuarios'
 import ListaProdutos from '../ListaProdutos'
 import CreateUser from '../CreateUser'
 import EditUser from '../EditUser'
+import DeleteUser from '../DeleteUser'
 
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
@@ -19,7 +20,7 @@ function Layout(){
     return(
         <View style={container}>
             <SafeAreaView style={AndroidSafeArea}>
-                <NavigationContainer>
+                {/* <NavigationContainer>
                     <Stack.Navigator>
                         <Stack.Screen 
                             name="IndexPage" 
@@ -42,11 +43,12 @@ function Layout(){
                             options={{headerShown: false, drawerItemStyle: { display: "none" }}}
                         />
                     </Stack.Navigator>
-                </NavigationContainer>
+                </NavigationContainer> */}
              {/* <ListaUsuarios />   */}
              {/* <ListaProdutos />  */}
-             {/* <CreateUser /> */}
+             <CreateUser />
              {/* <EditUser /> */}
+                {/* <DeleteUser /> */}
             </SafeAreaView>
         </View>
     )
