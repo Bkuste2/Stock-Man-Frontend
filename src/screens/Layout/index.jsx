@@ -19,7 +19,7 @@ function Layout(){
     return(
         <View style={container}>
             <SafeAreaView style={AndroidSafeArea}>
-                {/* <NavigationContainer>
+                <NavigationContainer>
                     <Stack.Navigator>
                         <Stack.Screen 
                             name="IndexPage" 
@@ -42,11 +42,11 @@ function Layout(){
                             options={{headerShown: false, drawerItemStyle: { display: "none" }}}
                         />
                     </Stack.Navigator>
-                </NavigationContainer> */}
+                </NavigationContainer>
              {/* <ListaUsuarios />   */}
              {/* <ListaProdutos />  */}
              {/* <CreateUser /> */}
-             <EditUser />
+             {/* <EditUser /> */}
             </SafeAreaView>
         </View>
     )

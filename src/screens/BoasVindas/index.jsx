@@ -6,6 +6,7 @@ import LogoBoasVindas from '../../assets/img/LogoBoasVindas'
 import Button from '../../components/Button'
 import ButtonGoogle from '../../components/ButtonSignWithGoogle'
 import BottomText from '../../components/BottomText'
+import { BASE_URL } from '@env'
 
 import { useNavigation } from '@react-navigation/native'
 
@@ -14,7 +15,7 @@ function BoasVindas(){
     const navigation = useNavigation()
 
     const handleNavigate = (path) => {
-        const url = `${BASE_URL}/${path}`
+        const url = `${path}`
         navigation.navigate(url)
     }
     
