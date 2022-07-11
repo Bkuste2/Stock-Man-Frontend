@@ -5,7 +5,9 @@ import Header from '../../components/Header';
 import User from '../../components/User'
 import { API_URL } from '@env';
 
+
 const ListaUsuarios = () => {
+    console.warn(API_URL);
     //Usuários
     const [users, setUsers] = useState({})
 
@@ -23,6 +25,8 @@ const ListaUsuarios = () => {
             .then((json) => setUsers(json.data))
             .catch((error) => console.error(error))
     }
+
+    console.warn(users);
 
     const getUser = async (id) => {
         fetch(`${API_URL}/user/${id}`)

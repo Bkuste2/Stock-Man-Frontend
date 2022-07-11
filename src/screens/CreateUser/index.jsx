@@ -16,8 +16,8 @@ function CreateUser(){
                 'Content-type': 'application/json; charset=UTF-8',
             },
         })
-            .then((response) => response.json)
-            .then((json) => console.log(json))
+            .then((response) => response.json())
+            .then((json) => console.warn(json))
             .catch((error) => console.log(error))
     }
 
