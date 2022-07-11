@@ -44,9 +44,9 @@ function Layout(){
                         />
                     </Stack.Navigator>
                 </NavigationContainer> */}
-             {/* <ListaUsuarios />   */}
-             {/* <ListaProdutos />  */}
-             <CreateUser />
+             <ListaUsuarios />   
+             {/* <ListaProdutos />  */}  
+             {/* <CreateUser /> */}
              {/* <EditUser /> */}
                 {/* <DeleteUser /> */}
             </SafeAreaView>

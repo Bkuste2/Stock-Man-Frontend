@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { container } from './styles';
-import { FlatList, View, Text } from 'react-native'
+import { FlatList, View, ScrollView } from 'react-native'
 import Header from '../../components/Header';
 import User from '../../components/User'
 import { API_URL } from '@env';
@@ -31,13 +31,6 @@ const ListaUsuarios = () => {
             .catch((error) => console.log(error))
     }
 
-    
-
-    
-
-
-
-
     // const renderUsers = () => {
     //     return users?.map((users) => (
     //         // <ListElement username={user.username} email={user.email} isUser />
@@ -60,7 +53,7 @@ const ListaUsuarios = () => {
         <>
             <Header />
             <View style={container}>
-                <FlatList
+                <FlatList 
                     data={users}
                     keyExtractor={users.id}
                     renderItem={renderUsers}
