@@ -12,14 +12,19 @@ import { useNavigation } from '@react-navigation/native'
 function BoasVindas(){
 
     const navigation = useNavigation()
-    
-    function handleNavigateToLogin(){
-        navigation.navigate('Login')
+
+    const handleNavigate = (path) => {
+        const url = `${BASE_URL}/${path}`
+        navigation.navigate(url)
     }
     
-    function handleNavigateToCadastro(){
-        navigation.navigate('Cadastro')
-    }
+    // function handleNavigateToLogin(){
+    //     navigation.navigate('Login')
+    // }
+    
+    // function handleNavigateToCadastro(){
+    //     navigation.navigate('Cadastro')
+    // }
 
     return(
         <View style={ container }>
@@ -27,12 +32,10 @@ function BoasVindas(){
                 <LogoBoasVindas/>
             </View>
             <View style={{marginBottom:65,}}>
-                <Button text={"Entrar"} onPressButton={handleNavigateToLogin} />
+                <Button text={"Entrar"} onPressButton={() => handleNavigate('Login')} />
                 <ButtonGoogle text={"Entrar com Google"}/>
             </View>
-            <BottomText firstText="Ainda não possui login? " importantText="Participe" onPressButton={handleNavigateToCadastro}/>
-
-
+            <BottomText firstText="Ainda não possui login? " importantText="Participe" onPressButton={() => handleNavigate('Cadastro')}/>
         </View>
     )
 }

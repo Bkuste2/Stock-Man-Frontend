@@ -1,36 +1,37 @@
 import React, { useEffect, useState } from 'react';
 import { FlatList, Text, View } from 'react-native'
-import ListElement from '../../components/ListElement';
 import Header from '../../components/Header';
 import { container } from './styles';
 
-import { api } from '../../assets/api';
+import { api } from '../../services/api';
 
 const ListaProdutos = () => {
+
     const [apiData, setApiData] = useState({})
+
+    const getApi = async () => {
+        const response = await api.get('/product')
+        setApiData(response.data.data)
+    }
+
     useEffect(() => {
-        const getApi = async () => {
-            const response = await api.get('/product')
-            setApiData(response.data.data)
-        }
         getApi()
+
     }, [])
 
     const renderItem = ({ item: product }) => {
         return (
             <View style={container}>
-                <ListElement
+                {/* <ListElement
                     id={product.id}
                     productName={product.name}
                     quantity={product.quantity}
                     price={product.price}
                     description={product.description}
-                />
+                />  */}
             </View>
-
         )
     }
-
 
     return (
         <>

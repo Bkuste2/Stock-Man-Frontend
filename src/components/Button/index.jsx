@@ -7,7 +7,6 @@ const Button =  ({ text, onPressButton }) => {
     return (
         <View>
             <TouchableOpacity style={ button } onPress={onPressButton}>
-                
                 <Text style={txtButton}>
                     {text}
                 </Text>

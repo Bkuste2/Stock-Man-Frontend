@@ -3,21 +3,9 @@ import { TouchableOpacity, Text, View } from 'react-native';
 import { container, textFormat } from './styles';
 import IconMenuEstoques from '../../assets/img/IconMenuEstoques'
 
-const ListElement = ({isUser, productName, description, quantity, price, username, email}) => {    
+const Product = ({productName, description, quantity, price}) => {    
 
-    const templateUser = () => {
-        return (
-            <TouchableOpacity style={container}>
-                <IconMenuEstoques />
-                <View style={{marginLeft:15}}>
-                    <Text style={textFormat}>{username}</Text>
-                    <Text style={textFormat}>{email}</Text>
-                </View>
-            </TouchableOpacity>
-        )
-    }
-
-    const templateProduct = () => {
+    const renderProduct = () => {
         return (
             <TouchableOpacity style={container}>
                 <IconMenuEstoques />
@@ -33,9 +21,9 @@ const ListElement = ({isUser, productName, description, quantity, price, usernam
 
     return (
         <View>
-            {isUser ? templateUser() : templateProduct()}            
+            {renderProduct()}            
         </View>
     )
 }
 
-export default ListElement;
+export default Product;

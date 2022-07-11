@@ -7,6 +7,8 @@ import Cadastro from '../Cadastro'
 import Login from '../Login'
 import ListaUsuarios from '../ListaUsuarios'
 import ListaProdutos from '../ListaProdutos'
+import CreateUser from '../CreateUser'
+import EditUser from '../EditUser'
 
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
@@ -41,8 +43,10 @@ function Layout(){
                         />
                     </Stack.Navigator>
                 </NavigationContainer> */}
-             {/* <ListaUsuarios />  */}
-             <ListaProdutos /> 
+             {/* <ListaUsuarios />   */}
+             {/* <ListaProdutos />  */}
+             {/* <CreateUser /> */}
+             <EditUser />
             </SafeAreaView>
         </View>
     )

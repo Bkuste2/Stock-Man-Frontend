@@ -1,43 +1,77 @@
 import React, { useEffect, useState } from 'react';
 import { container } from './styles';
-import { FlatList, View } from 'react-native'
+import { FlatList, View, Text } from 'react-native'
 import Header from '../../components/Header';
-import ListElement from '../../components/ListElement';
-
-
-import { api } from '../../assets/api';
+import User from '../../components/User'
+import { API_URL } from '@env';
 
 const ListaUsuarios = () => {
+    //Usuários
+    const [users, setUsers] = useState({})
 
-    const [apiData, setApiData] = useState({})
-    
-    const getUsers = ({item: user}) =>{
-        return (
-            <ListElement username={user.username} email={user.email} isUser />
-        )
+    //Usuário
+    const [userSelected, setUserSelected] = useState({})
+
+    const renderUsers = ({ item: user }) => {
+        return <User username={user.username} email={user.email} clickUser={() => console.log('')} />
     }
+
+    //Pegar os usuários
+    const getUsers = async () => {
+        fetch(`${API_URL}/users`)
+            .then((response) => response.json())
+            .then((json) => setUsers(json.data))
+            .catch((error) => console.error(error))
+    }
+
+    const getUser = async (id) => {
+        fetch(`${API_URL}/user/${id}`)
+            .then((response) => response.json())
+            .then((json) => setUserSelected(json.data))
+            .catch((error) => console.log(error))
+    }
+
     
-    useEffect(()=> { 
-        const getApi = async () => {
-            const response = await api.get('/user')
-            setApiData(response.data.data)
-        }
-        getApi()
+
+    
+
+    const deleteUser = async (id) => {
+        fetch(`${API_URL}/user/delete/${id}`, {
+            method:"delete"
+        })
+    }
+
+
+    // const renderUsers = () => {
+    //     return users?.map((users) => (
+    //         // <ListElement username={user.username} email={user.email} isUser />
+    //         <View key={users.id} style={{backgroundColor:"#fff"}}>
+    //             <Text>{users.id}</Text>
+    //             <Text>{users.username}</Text>
+    //             <Text>{users.email}</Text>
+    //             <Text>{users.password}</Text>
+    //         </View>
+    //     ))
+    // }
+
+    useEffect(() => {
+        getUsers()
+        // getUser()
     }, [])
-    
-    
+
+
     return (
         <>
             <Header />
             <View style={container}>
-                <FlatList 
-                    data={apiData} 
-                    keyExtractor={apiData.id}
-                    renderItem={getUsers}
-                />  
+                <FlatList
+                    data={users}
+                    keyExtractor={users.id}
+                    renderItem={renderUsers}
+                />
             </View>
         </>
     )
-} 
+}
 
-export default ListaUsuarios;
+export default ListaUsuarios
