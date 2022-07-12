@@ -5,41 +5,51 @@ import Header from '../../components/Header';
 import AddItem from '../../components/AddItem'
 import User from '../../components/User'
 import { useNavigation } from '@react-navigation/native'
-
+import axios from 'axios';
 import { API_URL } from '@env';
 
 
 const ListaUsuarios = () => {
-    
-    const navigation = useNavigation();
+    console.warn(`${API_URL}/users`);
+    useEffect(() => {
+        const getUsers = async () => {
+            fetch(`${API_URL}/users`,{
+                method:"GET",
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8',
+                },
+            })
+                .then((response) => response.json())
+                .then((json) => console.warn(json))
+                .catch((error) => console.error(error))
+        }
 
-    const handleNavigate = (path, object) => {
-        const url = `${path}`
-        navigation.navigate(url)
-    }
+        getUsers()
+        // getUser()
+    }, [])
 
-    //Usuários
     const [users, setUsers] = useState({})
 
     //Usuário
     const [userSelected, setUserSelected] = useState({})
-
-    const renderUsers = ({ item: user }) => {
-        return <User username={user.username} email={user.email} clickUser={() => {
-            console.log(user.id);
-            handleNavigate('EditUser')
-        }} />
-    }
-
-    //Pegar os usuários
-    const getUsers = async () => {
-        fetch(`${API_URL}/users`)
-            .then((response) => response.json())
-            .then((json) => setUsers(json.data))
-            .catch((error) => console.error(error))
-    }
-
     
+    
+    
+    const renderUsers = ({ item: user }) => {
+        return <User username={user.username} email={user.email} /* clickUser={() => {
+            console.log(user.id);
+            handleNavigate('')
+        }}*/ />
+    }
+    
+    const navigation = useNavigation();
+    //Pegar os usuários
+    
+
+    const handleNavigate = (path) => {
+        const url = `${path}`
+        navigation.navigate(url)
+    }
 
     // const renderUsers = () => {
     //     return users?.map((users) => (
@@ -53,10 +63,7 @@ const ListaUsuarios = () => {
     //     ))
     // }
 
-    useEffect(() => {
-        getUsers()
-        // getUser()
-    }, [])
+    
 
 
     return (

@@ -47,16 +47,16 @@ function Layout(){
                             component={ListaUsuarios} 
                             options={{headerShown: false, drawerItemStyle: { display: "none" }}}
                         />
-                        <Stack.Screen 
+                         <Stack.Screen 
                             name="CreateUser" 
                             component={CreateUser} 
                             options={{headerShown: false, drawerItemStyle: { display: "none" }}}
                         />
-                        <Stack.Screen 
+                        {/*<Stack.Screen 
                             name="EditUser" 
                             component={EditUser} 
                             options={{headerShown: false, drawerItemStyle: { display: "none" }}}
-                        />
+                        /> */}
                     </Stack.Navigator>
                 </NavigationContainer>
              {/* <ListaProdutos />  */}  

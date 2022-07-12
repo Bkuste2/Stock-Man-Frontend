@@ -41,10 +41,10 @@ function Cadastro(){
             <InputField placeholder="Senha" textInputFunction={password => setPassword(password)}/>
 
             <View style={{marginBottom:65,marginTop:40,}}>
-                <Button text={"Cadastro"} onPressButton={() => handleNavigate('Login')}/>
+                <Button text={"Cadastro"} onPressButton={handleNavigate('ListaUsuarios')}/>
                 <ButtonGoogle text={"Entrar com Google"}/>
             </View>
-            <BottomText firstText="Ainda não possui login? " importantText="Participe" onPressButton={handleNavigate('Cadastro')} />
+            <BottomText firstText="Ainda não possui login? " importantText="Participe" />
         </View>
     )
 }

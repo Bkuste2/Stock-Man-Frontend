@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { View, TextInput, TouchableOpacity } from 'react-native'
 import { API_URL } from '@env';
 import { useRoute } from '@react-navigation/native';
 

@@ -33,7 +33,7 @@ function BoasVindas(){
                 <LogoBoasVindas/>
             </View>
             <View style={{marginBottom:65,}}>
-                <Button text={"Entrar"} onPressButton={() => handleNavigate('Login')} />
+                <Button text={"Entrar"} onPressButton={()=> handleNavigate('Login')} />
                 <ButtonGoogle text={"Entrar com Google"}/>
             </View>
             <BottomText firstText="Ainda não possui login? " importantText="Participe" onPressButton={() => handleNavigate('Cadastro')}/>

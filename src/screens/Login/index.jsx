@@ -11,6 +11,9 @@ import { useNavigation } from '@react-navigation/native'
 
 function Login(){
     
+    const [email, setEmail] = useState("")
+    const [senha, setSenha] = useState("")
+    
     const navigation = useNavigation()
     
     const handleNavigate = (path) => {
@@ -18,8 +21,6 @@ function Login(){
         navigation.navigate(url)
     }
 
-    const [email, setEmail] = useState("")
-    const [senha, setSenha] = useState("")
 
     
     return(
