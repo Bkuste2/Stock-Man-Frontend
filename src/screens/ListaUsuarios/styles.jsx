@@ -7,4 +7,5 @@ export const container = StyleSheet.create({
     alignItems: "center",
     justifyContent:"center",
     backgroundColor: "#000",
+    flex: 1,
 })

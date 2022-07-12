@@ -18,5 +18,4 @@ export const button = StyleSheet.create({
 
 export const txtButton = StyleSheet.create({
     fontSize: 32,
-    fontWeight: "300",
 })

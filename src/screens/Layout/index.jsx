@@ -20,7 +20,7 @@ function Layout(){
     return(
         <View style={container}>
             <SafeAreaView style={AndroidSafeArea}>
-                {/* <NavigationContainer>
+                <NavigationContainer>
                     <Stack.Navigator>
                         <Stack.Screen 
                             name="IndexPage" 
@@ -42,11 +42,24 @@ function Layout(){
                             component={Login} 
                             options={{headerShown: false, drawerItemStyle: { display: "none" }}}
                         />
+                        <Stack.Screen 
+                            name="ListaUsuarios" 
+                            component={ListaUsuarios} 
+                            options={{headerShown: false, drawerItemStyle: { display: "none" }}}
+                        />
+                        <Stack.Screen 
+                            name="CreateUser" 
+                            component={CreateUser} 
+                            options={{headerShown: false, drawerItemStyle: { display: "none" }}}
+                        />
+                        <Stack.Screen 
+                            name="EditUser" 
+                            component={EditUser} 
+                            options={{headerShown: false, drawerItemStyle: { display: "none" }}}
+                        />
                     </Stack.Navigator>
-                </NavigationContainer> */}
-             <ListaUsuarios />   
+                </NavigationContainer>
              {/* <ListaProdutos />  */}  
-             {/* <CreateUser /> */}
              {/* <EditUser /> */}
                 {/* <DeleteUser /> */}
             </SafeAreaView>

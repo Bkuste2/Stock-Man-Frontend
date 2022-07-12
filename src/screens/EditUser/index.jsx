@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import { View, TextInput, TouchableOpacity } from 'react-native'
 import { API_URL } from '@env';
+import { useRoute } from '@react-navigation/native';
 
-function EditUser(){
-    const [id, setId] = useState('')
+function EditUser({route}){
+    const [id, setId] = useState()
     const [username, setUserName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
     const editUser = async () => {
-        fetch(`${API_URL}/user/edit/${parseInt(id)}`, {
+        fetch(`${API_URL}/user/edit/${id}`, {
             method:"PUT",
             body: JSON.stringify(User),
             headers: {
@@ -17,10 +18,11 @@ function EditUser(){
             },
         })
             .then((response) => response.json)
+            .then((response) => console.log(response))
             .catch((e) => e.message)
     }
 
-    console.log(id);
+    console.log(route);
 
     const User = {
         username,

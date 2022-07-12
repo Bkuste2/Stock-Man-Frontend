@@ -2,12 +2,22 @@ import React, { useEffect, useState } from 'react';
 import { container } from './styles';
 import { FlatList, View, ScrollView } from 'react-native'
 import Header from '../../components/Header';
+import AddItem from '../../components/AddItem'
 import User from '../../components/User'
+import { useNavigation } from '@react-navigation/native'
+
 import { API_URL } from '@env';
 
 
 const ListaUsuarios = () => {
-    console.warn(API_URL);
+    
+    const navigation = useNavigation();
+
+    const handleNavigate = (path, object) => {
+        const url = `${path}`
+        navigation.navigate(url)
+    }
+
     //Usuários
     const [users, setUsers] = useState({})
 
@@ -15,7 +25,10 @@ const ListaUsuarios = () => {
     const [userSelected, setUserSelected] = useState({})
 
     const renderUsers = ({ item: user }) => {
-        return <User username={user.username} email={user.email} clickUser={() => console.log('')} />
+        return <User username={user.username} email={user.email} clickUser={() => {
+            console.log(user.id);
+            handleNavigate('EditUser')
+        }} />
     }
 
     //Pegar os usuários
@@ -26,14 +39,7 @@ const ListaUsuarios = () => {
             .catch((error) => console.error(error))
     }
 
-    console.warn(users);
-
-    const getUser = async (id) => {
-        fetch(`${API_URL}/user/${id}`)
-            .then((response) => response.json())
-            .then((json) => setUserSelected(json.data))
-            .catch((error) => console.log(error))
-    }
+    
 
     // const renderUsers = () => {
     //     return users?.map((users) => (
@@ -54,16 +60,18 @@ const ListaUsuarios = () => {
 
 
     return (
-        <>
+        <View style={container}>
             <Header />
             <View style={container}>
                 <FlatList 
                     data={users}
                     keyExtractor={users.id}
                     renderItem={renderUsers}
+
                 />
+                <AddItem label="Criar novo estoque" onPress={() => handleNavigate('CreateUser')}/>
             </View>
-        </>
+        </View>
     )
 }
 

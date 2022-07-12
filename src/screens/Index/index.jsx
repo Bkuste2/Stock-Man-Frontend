@@ -12,7 +12,7 @@ function Index(){
 
     setTimeout(() => {
         navigation.navigate('BoasVindas')
-    }, 3000)
+    }, 1000)
 
     return(
         <View style={container}>

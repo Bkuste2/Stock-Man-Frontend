@@ -13,8 +13,9 @@ function Login(){
     
     const navigation = useNavigation()
     
-    function handleNavigateToCadastro(){
-        navigation.navigate('Cadastro')
+    const handleNavigate = (path) => {
+        const url = `${path}`
+        navigation.navigate(url)
     }
 
     const [email, setEmail] = useState("")
@@ -31,10 +32,10 @@ function Login(){
             <InputField placeholder="Senha" textInputFunction={text => setSenha(text)}/>
 
             <View style={{marginBottom:65,marginTop:60,}}>
-                <Button text={"Entrar"} onPressButton={() => console.warn(email, senha)}/>
+                <Button text={"Entrar"} onPressButton={() => handleNavigate('ListaUsuarios')}/>
                 <ButtonGoogle text={"Entrar com Google"}/>
             </View>
-            <BottomText firstText="Ainda não possui login?  " importantText="Participe" onPressButton={handleNavigateToCadastro}/>
+            <BottomText firstText="Ainda não possui login?  " importantText="Participe" onPressButton={handleNavigate('Cadastro')}/>
         </View>
     )
 }
