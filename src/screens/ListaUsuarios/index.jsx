@@ -10,7 +10,6 @@ import { API_URL } from '@env';
 
 
 const ListaUsuarios = () => {
-    console.warn(`${API_URL}/users`);
     useEffect(() => {
         const getUsers = async () => {
             fetch(`${API_URL}/users`,{
@@ -20,7 +19,7 @@ const ListaUsuarios = () => {
                 },
             })
                 .then((response) => response.json())
-                .then((json) => console.warn(json))
+                .then((json) => setUsers(json.data))
                 .catch((error) => console.error(error))
         }
 
@@ -36,10 +35,7 @@ const ListaUsuarios = () => {
     
     
     const renderUsers = ({ item: user }) => {
-        return <User username={user.username} email={user.email} /* clickUser={() => {
-            console.log(user.id);
-            handleNavigate('')
-        }}*/ />
+        return <User username={user.username} email={user.email} />
     }
     
     const navigation = useNavigation();
@@ -72,7 +68,7 @@ const ListaUsuarios = () => {
             <View style={container}>
                 <FlatList 
                     data={users}
-                    keyExtractor={users.id}
+                    keyExtractor={users.id} 
                     renderItem={renderUsers}
 
                 />

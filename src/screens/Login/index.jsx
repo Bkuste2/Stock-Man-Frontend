@@ -9,6 +9,7 @@ import ButtonGoogle from '../../components/ButtonSignWithGoogle'
 import BottomText from '../../components/BottomText'
 import { useNavigation } from '@react-navigation/native'
 
+
 function Login(){
     
     const [email, setEmail] = useState("")
